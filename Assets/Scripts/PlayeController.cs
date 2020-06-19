@@ -6,8 +6,7 @@ public class PlayeController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    private float t = 0.0f;
-    private bool moving = false;
+    //private bool moving = false;
 
     [SerializeField]
     private string horizontalAxe = "";
