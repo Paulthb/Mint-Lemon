@@ -15,7 +15,7 @@ public class PlayeController : MonoBehaviour
 
     public float speed = 5;
 
-    public GameObject gameOverText = null;
+    private bool playerHasMove = false;
 
     void Awake()
     {
@@ -24,13 +24,24 @@ public class PlayeController : MonoBehaviour
 
     void Update()
     {
-        //plus tard
         float moveHorizontal = Input.GetAxis(horizontalAxe);
         float moveVertical = Input.GetAxis(verticalAxe);
-        Vector2 movement = new Vector3(moveHorizontal * speed, moveVertical * speed);
+        Vector2 movement = new Vector3(moveHorizontal, moveVertical);
 
-        rb.velocity = new Vector2(movement.x, movement.y);
+        //au début de la game
+        if (moveHorizontal >= 0.8f || moveHorizontal <= -0.8f || moveVertical >= 0.8f || moveVertical <= -0.8f)
+        {
+            if(playerHasMove == false)
+            {
+                GameManager.Instance.PlayerHasMove();
+                playerHasMove = true;
+            }
 
+            rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+        }
+
+        Debug.Log("velocity : " + rb.velocity);
+        Debug.Log("x : " + movement.x + " y : " + movement.y);
     }
 
     private void FixedUpdate()
@@ -46,7 +57,7 @@ public class PlayeController : MonoBehaviour
         //si on sot du citron, Game Over
         if(collision.gameObject.tag == "Platform")
         {
-            gameOverText.SetActive(true);
+            GameManager.Instance.GameOver();
         }
     }
 }
