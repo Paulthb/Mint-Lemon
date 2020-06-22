@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: Bind
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: Bones/Bas feuille
+    localPosition: {x: 0.001, y: -0.31, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.71298444, w: 0.70117986}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2
+    localPosition: {x: 0.089999996, y: 0.000000007450581, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.0021736005, w: 0.9999977}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille
+    localPosition: {x: 0.11000006, y: 0.000000007450581, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.009368025, w: 0.9999562}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2
+    localPosition: {x: 0.089979306, y: -0.0000000012082921, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.03343697, w: 0.99944085}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3
+    localPosition: {x: 0.070000045, y: 0.000000014961188, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.015228519, w: 0.99988407}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilG
+    localPosition: {x: -0.005311746, y: 0.028728005, z: 0}
+    localRotation: {x: -0, y: -0, z: 0.72742885, w: 0.6861831}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilG/milieuSourcilG
+    localPosition: {x: 0.035000015, y: 9.313226e-10, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.029460847, w: 0.99956596}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilG/milieuSourcilG/EndSourcilG
+    localPosition: {x: 0.04000344, y: 3.1241143e-10, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.015256588, w: 0.99988365}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilD
+    localPosition: {x: 0.0005582749, y: -0.022292564, z: 0}
+    localRotation: {x: -0, y: -0, z: -0.6674047, w: 0.7446953}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilD/milieuSourcilD
+    localPosition: {x: 0.035, y: 3.0559022e-10, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.037687864, w: 0.99928963}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/SourcilD/milieuSourcilD/EndSourcilD
+    localPosition: {x: 0.04000341, y: -0.0000000013560566, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.0053486256, w: 0.99998575}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille
+    localPosition: {x: 0.059999958, y: -2.427214e-11, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.054846834, w: 0.99849486}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Haut feuille 2
+    localPosition: {x: 0.059999906, y: 1.200533e-10, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.031766403, w: 0.9994953}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Haut feuille 2/Haut feuille 3
+    localPosition: {x: 0.049999945, y: -0.0000000025715963, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Haut feuille 2/Haut feuille 3/Haut feuille 4
+    localPosition: {x: 0.049999967, y: -0.000000008609732, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.043749593, w: 0.9990426}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Haut feuille 2/Haut feuille 3/Haut feuille 4/Haut feuille
+      Last
+    localPosition: {x: 0.029999904, y: 0.000000007372364, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Bandana
+    localPosition: {x: 0.018940287, y: -0.0549676, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.5494315, w: 0.83553874}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/Milieu feuille 2/Milieu
+      feuille 3/Haut feuille/Bandana2
+    localPosition: {x: 0.000013963319, y: 0.049604107, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.6444856, w: 0.7646165}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/OeilD
+    localPosition: {x: 0.02941856, y: -0.022575093, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.70393544, w: 0.710264}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Bas feuille 2/Milieu feuille/OeilG
+    localPosition: {x: 0.02910281, y: 0.018210437, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.70502114, w: 0.7091863}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/JambeD
+    localPosition: {x: 0.005046519, y: -0.05703277, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9999353, w: 0.011376212}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/JambeD/JambeD Bas
+    localPosition: {x: 0.06499847, y: 0, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/JambeG
+    localPosition: {x: 0.010352952, y: 0.058772348, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9998765, w: 0.015717173}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/JambeG/JambeG Bas
+    localPosition: {x: 0.06839082, y: -4.656613e-10, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: Bones/Bas feuille/Ombre
+    localPosition: {x: -0.07282084, y: 0.0017361566, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.99997485, w: 0.00709806}
+    localScale: {x: 1, y: 1, z: 1}
