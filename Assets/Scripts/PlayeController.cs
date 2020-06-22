@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class PlayeController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-
-    //private bool moving = false;
-
     [SerializeField]
     private string horizontalAxe = "";
     [SerializeField]
     private string verticalAxe = "";
 
+    [SerializeField]
+    private GameObject trailNormal;
+    [SerializeField]
+    private GameObject trailHightSpeed;
+
     public float speed = 5;
 
     private bool playerHasMove = false;
+    private Rigidbody2D rb;
 
     void Awake()
     {
@@ -40,8 +42,8 @@ public class PlayeController : MonoBehaviour
             rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
         }
 
-        Debug.Log("velocity : " + rb.velocity);
-        Debug.Log("x : " + movement.x + " y : " + movement.y);
+        //Debug.Log("velocity : " + rb.velocity);
+        //Debug.Log("x : " + movement.x + " y : " + movement.y);
     }
 
     private void FixedUpdate()
@@ -59,5 +61,36 @@ public class PlayeController : MonoBehaviour
         {
             GameManager.Instance.GameOver();
         }
+
+        if (collision.gameObject.tag == "Acid")
+        {
+            StopCoroutine(AcidEffect());
+            StartCoroutine(AcidEffect());
+        }
+    }
+
+    private IEnumerator AcidEffect()
+    {
+        float elapsedTime = 0;
+        float waitTime = 0.5f;
+
+        trailNormal.SetActive(false);
+        trailHightSpeed.SetActive(true);
+
+        float baseSpeed = speed;
+        speed = speed * 2;
+        float newSpeed = speed;
+
+        while (elapsedTime < waitTime)
+        {
+            speed = Mathf.Lerp(newSpeed, baseSpeed, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        speed = baseSpeed;
+        trailNormal.SetActive(true);
+        trailHightSpeed.SetActive(false);
     }
 }

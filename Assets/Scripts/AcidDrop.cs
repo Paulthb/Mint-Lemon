@@ -7,12 +7,14 @@ public class AcidDrop : MonoBehaviour
     private SpriteRenderer acidDroppedSprite = null;
 
     private CircleCollider2D col = null;
+    private SpriteRenderer sprite = null;
 
 
     // Start is called before the first frame update
     void Start()
     {
         col = GetComponent<CircleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -28,5 +30,6 @@ public class AcidDrop : MonoBehaviour
     public void AcidDropped()
     {
         col.enabled = true;
+        sprite.color = Color.red;
     }
 }

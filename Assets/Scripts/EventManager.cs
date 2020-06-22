@@ -5,13 +5,11 @@ using UnityEngine;
 public class EventManager : MonoBehaviour
 {
     [SerializeField]
-    private List<Transform> spawnerPosList = null;
+    private List<AcidSpawner> spawnerList = null;
 
     [SerializeField]
     private List<Transform> acidDropPosList = null;
 
-    [SerializeField]
-    private List<GameObject> AcidDropList = null;
 
     #region Singleton Pattern
     private static EventManager _instance;
@@ -43,9 +41,12 @@ public class EventManager : MonoBehaviour
 
     public void AcidDrop()
     {
-        int randSpawnerId = Random.Range(0, spawnerPosList.Count);
-        int randAcidDropObject = Random.Range(0, 0);//pour l'instant
+        int randSpawnerId = Random.Range(0, spawnerList.Count - 1);
+        int randAcidPosId = Random.Range(0, acidDropPosList.Count - 1);
 
+        //Debug.Log(randSpawnerId);
+        //Debug.Log(randAcidPosId);
 
+        spawnerList[randSpawnerId].SpawnAcid(acidDropPosList[randAcidPosId]);
     }
 }
