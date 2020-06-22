@@ -274,7 +274,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.75333405
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -846,7 +846,7 @@ PrefabInstance:
     - target: {fileID: 6318214230371710479, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.04379127
+      value: 0.043791287
       objectReference: {fileID: 0}
     - target: {fileID: 6318214230371710479, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
@@ -1136,12 +1136,12 @@ PrefabInstance:
     - target: {fileID: 6318214231898942766, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9637565
+      value: 0.96375656
       objectReference: {fileID: 0}
     - target: {fileID: 6318214231898942766, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.26678354
+      value: 0.2667833
       objectReference: {fileID: 0}
     - target: {fileID: 6318214231898942766, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
@@ -1181,12 +1181,12 @@ PrefabInstance:
     - target: {fileID: 6318214232377631308, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.213869
+      value: -0.21386859
       objectReference: {fileID: 0}
     - target: {fileID: 6318214232377631308, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9768624
+      value: 0.97686243
       objectReference: {fileID: 0}
     - target: {fileID: 6318214232377631308, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
@@ -1723,7 +1723,7 @@ GameObject:
   - component: {fileID: 1022665762}
   - component: {fileID: 1022665763}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: DefaultSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2063,7 +2063,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.75333405
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2494,6 +2494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalAxe: Horizontal1
   verticalAxe: Vertical1
+  mrMint: {fileID: 1290704445}
   trailNormal: {fileID: 1585488932}
   trailHightSpeed: {fileID: 174738740}
   speed: 7

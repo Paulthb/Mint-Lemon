@@ -10,9 +10,13 @@ public class PlayeController : MonoBehaviour
     private string verticalAxe = "";
 
     [SerializeField]
+    private Transform mrMint = null;
+
+    [SerializeField]
     private GameObject trailNormal;
     [SerializeField]
     private GameObject trailHightSpeed;
+
 
     public float speed = 5;
 
@@ -30,14 +34,20 @@ public class PlayeController : MonoBehaviour
         float moveVertical = Input.GetAxis(verticalAxe);
         Vector2 movement = new Vector3(moveHorizontal, moveVertical);
 
-        //au début de la game
         if (moveHorizontal >= 0.8f || moveHorizontal <= -0.8f || moveVertical >= 0.8f || moveVertical <= -0.8f)
         {
+            //au début de la game
             if(playerHasMove == false)
             {
                 GameManager.Instance.PlayerHasMove();
                 playerHasMove = true;
             }
+
+            //rotation du sprite
+            if (moveHorizontal > 0)
+                mrMint.localRotation = Quaternion.Euler(0, 0, 0);
+            if (moveHorizontal < 0)
+                mrMint.localRotation = Quaternion.Euler(0, 180, 0);
 
             rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
         }
@@ -72,13 +82,13 @@ public class PlayeController : MonoBehaviour
     private IEnumerator AcidEffect()
     {
         float elapsedTime = 0;
-        float waitTime = 0.5f;
+        float waitTime = 1f;
 
         trailNormal.SetActive(false);
         trailHightSpeed.SetActive(true);
 
         float baseSpeed = speed;
-        speed = speed * 2;
+        speed = speed + 2;
         float newSpeed = speed;
 
         while (elapsedTime < waitTime)
