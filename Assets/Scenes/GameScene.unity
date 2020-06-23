@@ -922,6 +922,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 6318214230625578457, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230625578457, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230625578457, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6318214230653128435, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_Mesh
@@ -930,7 +945,7 @@ PrefabInstance:
     - target: {fileID: 6318214230653128435, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6318214230653128435, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
@@ -945,6 +960,46 @@ PrefabInstance:
     - target: {fileID: 6318214230653128437, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
         type: 3}
       propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.m_SolverPoses.Array.data[0].solverRotation.z
+      value: 0.97411424
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.m_SolverPoses.Array.data[0].solverRotation.w
+      value: 0.22605622
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.m_SolverPoses.Array.data[1].solverRotation.z
+      value: 0.1889575
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.m_SolverPoses.Array.data[1].solverRotation.w
+      value: 0.9819853
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.targetPosition.x
+      value: -7.3999343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.targetPosition.y
+      value: -0.870978
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.targetPosition.z
+      value: -7.262231
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318214230732223504, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+        type: 3}
+      propertyPath: m_Solver.flip
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6318214231168346909, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
@@ -1995,6 +2050,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 835825338}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1291152773 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6318214231299462571, guid: a0a4450d1efa12b46ad6fc5ae1cafba7,
+    type: 3}
+  m_PrefabInstance: {fileID: 835825338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1464792345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2633,7 @@ MonoBehaviour:
   mrMint: {fileID: 1290704445}
   trailNormal: {fileID: 1585488932}
   trailHightSpeed: {fileID: 174738740}
+  mrMintAnimator: {fileID: 1291152773}
   speed: 7
 --- !u!1 &2098740502
 GameObject:

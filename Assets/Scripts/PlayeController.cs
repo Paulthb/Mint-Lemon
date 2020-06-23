@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,15 @@ public class PlayeController : MonoBehaviour
     private Transform mrMint = null;
 
     [SerializeField]
-    private GameObject trailNormal;
+    private GameObject trailNormal = null;
     [SerializeField]
-    private GameObject trailHightSpeed;
+    private GameObject trailHightSpeed = null;
 
+    [SerializeField]
+    private Animator mrMintAnimator = null;
+
+    [NonSerialized]
+    public bool isPlayerAlive = true;
 
     public float speed = 5;
     float baseSpeed;
@@ -24,8 +30,10 @@ public class PlayeController : MonoBehaviour
     private bool isAccelerateted = false;
     private float accelElapseTime = 0;
 
+    private bool isJumping = false;
+
     private bool playerHasMove = false;
-    private Rigidbody2D rb;
+    private Rigidbody2D rb = null;
 
     void Awake()
     {
@@ -43,13 +51,14 @@ public class PlayeController : MonoBehaviour
         float moveVertical = Input.GetAxis(verticalAxe);
         Vector2 movement = new Vector3(moveHorizontal, moveVertical);
 
-        if (moveHorizontal >= 0.8f || moveHorizontal <= -0.8f || moveVertical >= 0.8f || moveVertical <= -0.8f)
+        if ((moveHorizontal >= 0.8f || moveHorizontal <= -0.8f || moveVertical >= 0.8f || moveVertical <= -0.8f) && isPlayerAlive )
         {
             //au début de la game
             if(playerHasMove == false)
             {
                 GameManager.Instance.PlayerHasMove();
                 playerHasMove = true;
+                mrMintAnimator.SetBool("IsMoving", true);
             }
 
             //rotation du sprite
@@ -59,6 +68,12 @@ public class PlayeController : MonoBehaviour
                 mrMint.localRotation = Quaternion.Euler(0, 180, 0);
 
             rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
+        }
+
+        if (Input.GetButton("Jump") && !isJumping)
+        {
+            StartCoroutine(PlayerJump());
+            Debug.Log("JUMP TA RACE");
         }
     }
 
@@ -73,12 +88,13 @@ public class PlayeController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         //si on sot du citron, Game Over
-        if(collision.gameObject.tag == "Platform")
+        if(collision.gameObject.tag == "Platform" && !isJumping)
         {
             GameManager.Instance.GameOver();
+            PlayerDeath();
         }
 
-        if (collision.gameObject.tag == "Acid")
+        if (collision.gameObject.tag == "Acid" && !isJumping)
         {
             speed = baseSpeed;
             if(isAccelerateted)
@@ -115,5 +131,21 @@ public class PlayeController : MonoBehaviour
         trailNormal.SetActive(true);
         trailHightSpeed.SetActive(false);
         isAccelerateted = false;
+    }
+
+    public IEnumerator PlayerJump()
+    {
+        mrMintAnimator.SetBool("IsJumping", true);
+        isJumping = true;
+        yield return new WaitForSeconds(1f);
+        mrMintAnimator.SetBool("IsJumping", false);
+        isJumping = false;
+    }
+
+    public void PlayerDeath()
+    {
+        isPlayerAlive = false;
+        mrMintAnimator.SetBool("IsDead", true);
+        rb.velocity = Vector3.zero;
     }
 }
