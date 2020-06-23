@@ -4,22 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class IntroScript : MonoBehaviour
-{
-    public GameObject pressToPlayText = null;
+{  
 
-    // Update is called once per frame
-    void Update()
+    public void StartGame(string sceneNameToLoad)
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            pressToPlayText.SetActive(false);
-            StartCoroutine(StartGameCoroutine());
-        }
+        SceneManager.LoadScene(sceneNameToLoad);
     }
 
-    public IEnumerator StartGameCoroutine()
+    public void QuitGame()
     {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("GameScene");
+        Application.Quit();
+        Debug.Log("Game is exiting");
     }
 }

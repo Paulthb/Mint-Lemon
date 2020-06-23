@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,20 @@ public class GameManager : MonoBehaviour
     private GameObject startToMoveObject = null;
     [SerializeField]
     private GameObject gameOverText = null;
+
+    [SerializeField]
+    private HighScore highScoreData = null;
+
+    [SerializeField]
+    private Transform cameraTransform = null;
+
+    [SerializeField]
+    private Transform highScoreCameraPos = null;
+
+    [NonSerialized]
+    public bool isGameStarted = false;
+
+    private float timerScore = 0;
 
     #region Singleton Pattern
     private static GameManager _instance;
@@ -27,26 +42,41 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     //hide the text at the start of the game
     public void PlayerHasMove()
     {
         startToMoveObject.SetActive(false);
+        isGameStarted = true;
     }
 
     public void GameOver()
     {
+        isGameStarted = false;
         gameOverText.SetActive(true);
+
+        timerScore = ChronoTimer.Instance.GetTimer();
+
+        highScoreData.scoreList.Add(timerScore);
+
+        StartCoroutine(SwitchToHighScorePlan());
+    }
+
+    public IEnumerator SwitchToHighScorePlan()
+    {
+        yield return new WaitForSeconds(2f);
+
+        float elapsedTime = 0;
+        float waitTime = 2f;
+
+        Vector3 baseCamPos = cameraTransform.position;
+
+        while (elapsedTime < waitTime)
+        {
+            cameraTransform.position = Vector3.Lerp(baseCamPos, highScoreCameraPos.position, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+        cameraTransform.position = highScoreCameraPos.position;
     }
 }
