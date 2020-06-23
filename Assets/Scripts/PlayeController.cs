@@ -19,6 +19,10 @@ public class PlayeController : MonoBehaviour
 
 
     public float speed = 5;
+    float baseSpeed;
+
+    private bool isAccelerateted = false;
+    private float accelElapseTime = 0;
 
     private bool playerHasMove = false;
     private Rigidbody2D rb;
@@ -26,6 +30,11 @@ public class PlayeController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        baseSpeed = speed;
     }
 
     void Update()
@@ -51,9 +60,6 @@ public class PlayeController : MonoBehaviour
 
             rb.velocity = new Vector2(movement.x * speed, movement.y * speed);
         }
-
-        //Debug.Log("velocity : " + rb.velocity);
-        //Debug.Log("x : " + movement.x + " y : " + movement.y);
     }
 
     private void FixedUpdate()
@@ -74,33 +80,40 @@ public class PlayeController : MonoBehaviour
 
         if (collision.gameObject.tag == "Acid")
         {
-            StopCoroutine(AcidEffect());
-            StartCoroutine(AcidEffect());
+            speed = baseSpeed;
+            if(isAccelerateted)
+                accelElapseTime = 0;
+            else
+                StartCoroutine(AcidEffect());
         }
     }
 
     private IEnumerator AcidEffect()
     {
-        float elapsedTime = 0;
+        isAccelerateted = true;
         float waitTime = 1f;
 
         trailNormal.SetActive(false);
         trailHightSpeed.SetActive(true);
 
-        float baseSpeed = speed;
         speed = speed + 2;
         float newSpeed = speed;
 
-        while (elapsedTime < waitTime)
+        Debug.Log(baseSpeed);
+
+        while (accelElapseTime < waitTime)
         {
-            speed = Mathf.Lerp(newSpeed, baseSpeed, (elapsedTime / waitTime));
-            elapsedTime += Time.deltaTime;
+            speed = Mathf.Lerp(newSpeed, baseSpeed, (accelElapseTime / waitTime));
+            accelElapseTime += Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
         }
 
+        accelElapseTime = 0;
         speed = baseSpeed;
+
         trailNormal.SetActive(true);
         trailHightSpeed.SetActive(false);
+        isAccelerateted = false;
     }
 }
