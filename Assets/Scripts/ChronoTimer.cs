@@ -10,6 +10,24 @@ public class ChronoTimer : MonoBehaviour
 
     private float timer = 0;
 
+    #region Singleton Pattern
+    private static ChronoTimer _instance;
+
+    public static ChronoTimer Instance { get { return _instance; } }
+    #endregion
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+
     void Update()
     {
         if (timer >= 0.0f && GameManager.Instance.isGameStarted)
