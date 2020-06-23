@@ -7,5 +7,15 @@ public class HighScore : ScriptableObject
 {
     public List<float> scoreList;
 
-    //public float 
+    public float GetHighScore()
+    {
+        float highScore = 0;
+        foreach(float score in scoreList)
+        {
+            if (score > highScore)
+                highScore = score;
+        }
+
+        return highScore;
+    }
 }

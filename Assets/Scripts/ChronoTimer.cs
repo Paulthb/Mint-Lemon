@@ -82,4 +82,10 @@ public class ChronoTimer : MonoBehaviour
             + timerMilliSeconds[5].ToString();
         }
     }
+
+
+    public float GetTimer()
+    {
+        return timer;
+    }
 }
