@@ -71,10 +71,7 @@ public class PlayeController : MonoBehaviour
         }
 
         if (Input.GetButton("Jump") && !isJumping)
-        {
             StartCoroutine(PlayerJump());
-            Debug.Log("JUMP TA RACE");
-        }
     }
 
     private void FixedUpdate()
@@ -89,15 +86,15 @@ public class PlayeController : MonoBehaviour
     {
         //si on sot du citron, Game Over
         if(collision.gameObject.tag == "Platform" && !isJumping)
-        {
-            GameManager.Instance.GameOver();
             PlayerDeath();
-        }
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "Acid" && !isJumping)
         {
             speed = baseSpeed;
-            if(isAccelerateted)
+            if (isAccelerateted)
                 accelElapseTime = 0;
             else
                 StartCoroutine(AcidEffect());
@@ -114,8 +111,6 @@ public class PlayeController : MonoBehaviour
 
         speed = speed + 2;
         float newSpeed = speed;
-
-        Debug.Log(baseSpeed);
 
         while (accelElapseTime < waitTime)
         {
@@ -147,5 +142,7 @@ public class PlayeController : MonoBehaviour
         isPlayerAlive = false;
         mrMintAnimator.SetBool("IsDead", true);
         rb.velocity = Vector3.zero;
+
+        GameManager.Instance.GameOver();
     }
 }
