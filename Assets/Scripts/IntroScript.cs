@@ -22,4 +22,9 @@ public class IntroScript : MonoBehaviour
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameScene");
     }
+
+    public void StartGame(string sceneNameToLoad)
+    {
+        SceneManager.LoadScene(sceneNameToLoad);
+    }
 }

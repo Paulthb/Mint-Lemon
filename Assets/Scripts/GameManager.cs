@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
     private GameObject startToMoveObject = null;
     [SerializeField]
     private GameObject gameOverText = null;
+
+    [NonSerialized]
+    public bool isGameStarted = false;
 
     #region Singleton Pattern
     private static GameManager _instance;
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
     public void PlayerHasMove()
     {
         startToMoveObject.SetActive(false);
+        isGameStarted = true;
     }
 
     public void GameOver()
