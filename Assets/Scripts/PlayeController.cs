@@ -71,10 +71,7 @@ public class PlayeController : MonoBehaviour
         }
 
         if (Input.GetButton("Jump") && !isJumping)
-        {
             StartCoroutine(PlayerJump());
-            Debug.Log("JUMP TA RACE");
-        }
     }
 
     private void FixedUpdate()
@@ -114,8 +111,6 @@ public class PlayeController : MonoBehaviour
 
         speed = speed + 2;
         float newSpeed = speed;
-
-        Debug.Log(baseSpeed);
 
         while (accelElapseTime < waitTime)
         {

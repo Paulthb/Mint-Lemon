@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class AcidDrop : MonoBehaviour
 {
-    private SpriteRenderer acidDroppedSprite = null;
+    public Sprite acidDroppedSprite = null;
 
-    private CircleCollider2D col = null;
+    private BoxCollider2D col = null;
     private SpriteRenderer sprite = null;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        col = GetComponent<CircleCollider2D>();
+        col = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -30,6 +30,8 @@ public class AcidDrop : MonoBehaviour
     public void AcidDropped()
     {
         col.enabled = true;
-        sprite.color = Color.red;
+        sprite.sprite = acidDroppedSprite;
+
+        transform.localScale = new Vector3(0.26f, 0.18f, 0);
     }
 }
