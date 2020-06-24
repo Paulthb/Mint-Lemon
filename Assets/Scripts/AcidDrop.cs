@@ -9,6 +9,8 @@ public class AcidDrop : MonoBehaviour
     private BoxCollider2D col = null;
     private SpriteRenderer sprite = null;
 
+    public ParticleSystem particule = null;
+
     public float acidLifeTime = 5;
 
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class AcidDrop : MonoBehaviour
     {
         col.enabled = true;
         sprite.sprite = acidDroppedSprite;
+        particule.Play();
 
         transform.localScale = new Vector3(0.26f, 0.18f, 0);
         StartCoroutine(AcidLifeTime());
@@ -40,6 +43,6 @@ public class AcidDrop : MonoBehaviour
     public IEnumerator AcidLifeTime()
     {
         yield return new WaitForSeconds(acidLifeTime);
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
