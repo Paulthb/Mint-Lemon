@@ -26,9 +26,10 @@ public class PlatFormScript : MonoBehaviour
         isTouilletteRunning = true;
 
         yield return new WaitForSeconds(0.9f);
+        FXManager.Instance.LaunchTouillette();
 
         //tourne vers la droite ou vers la gauche
-        if(isRight)
+        if (isRight)
             targetAngles = transform.eulerAngles + 360f * Vector3.forward; // what the new angles should be
         else
             targetAngles = transform.eulerAngles + 360f * Vector3.back; // what the new angles should be
@@ -51,5 +52,6 @@ public class PlatFormScript : MonoBehaviour
         }
 
         isTouilletteRunning = false;
+        FXManager.Instance.StopTouillette();
     }
 }
