@@ -35,6 +35,16 @@ public class PlayeController : MonoBehaviour
     private bool playerHasMove = false;
     private Rigidbody2D rb = null;
 
+
+    /// <summary>
+    /// ///////////////////////////
+    /// </summary>
+    public float m_moveForce = 60f;
+    public float m_maxSpeed = 10f;
+
+
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -74,13 +84,22 @@ public class PlayeController : MonoBehaviour
             StartCoroutine(PlayerJump());
     }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            rb.velocity = rb.velocity * 0.9f;
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    float hAx = Input.GetAxis(horizontalAxe);
+    //    float vAx = Input.GetAxis(horizontalAxe);
+
+    //    ////Use the two store floats to create a new Vector2 variable movement.
+    //    Vector2 movement = new Vector2(hAx, vAx);
+
+    //    rb.AddForce(movement * m_moveForce);
+
+    //    if (Mathf.Abs(rb.velocity.x) > m_maxSpeed)
+    //        rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * m_maxSpeed, rb.velocity.y);
+
+    //    if (Mathf.Abs(rb.velocity.y) > m_maxSpeed)
+    //        rb.velocity = new Vector2(rb.velocity.x, Mathf.Sign(rb.velocity.y) * m_maxSpeed);
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
