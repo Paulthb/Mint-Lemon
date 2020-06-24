@@ -54,74 +54,74 @@ public class EventManager : MonoBehaviour
 
     public IEnumerator EventTimer()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         AcidDrop();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         HoleDrop();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 2);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 2);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         HoleDrop();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        ActivateTouillette();
+
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
-        LaunchRandomEvent(1, 3);
-
-        yield return new WaitForSeconds(5);
-        AcidDrop();
-
-        yield return new WaitForSeconds(5);
-        LaunchRandomEvent(1, 2);
-
-        yield return new WaitForSeconds(5);
-        AcidDrop();
-
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         HoleDrop();
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        LaunchRandomEvent(1, 3); ;
+
+        yield return new WaitForSeconds(3);
+        HoleDrop();
+
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        HoleDrop();
+
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        HoleDrop();
+
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(5);
-        LaunchRandomEvent(1, 3);
-
-        yield return new WaitForSeconds(5);
-        LaunchRandomEvent(1, 3);
+        yield return new WaitForSeconds(3);
+        HoleDrop();
     }
 
 
