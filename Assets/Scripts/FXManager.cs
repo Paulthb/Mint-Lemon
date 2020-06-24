@@ -5,7 +5,7 @@ using UnityEngine;
 public class FXManager : MonoBehaviour
 {
     [SerializeField]
-    private ParticleSystem touillette;
+    private ParticleSystem touillette = null;
 
 
     #region Singleton Pattern
