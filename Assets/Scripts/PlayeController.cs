@@ -43,8 +43,6 @@ public class PlayeController : MonoBehaviour
     public float m_maxSpeed = 10f;
 
 
-
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
