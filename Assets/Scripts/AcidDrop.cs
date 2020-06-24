@@ -9,6 +9,7 @@ public class AcidDrop : MonoBehaviour
     private BoxCollider2D col = null;
     private SpriteRenderer sprite = null;
 
+    public float acidLifeTime = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,12 @@ public class AcidDrop : MonoBehaviour
         sprite.sprite = acidDroppedSprite;
 
         transform.localScale = new Vector3(0.26f, 0.18f, 0);
+        StartCoroutine(AcidLifeTime());
+    }
+
+    public IEnumerator AcidLifeTime()
+    {
+        yield return new WaitForSeconds(acidLifeTime);
+        Destroy(this);
     }
 }

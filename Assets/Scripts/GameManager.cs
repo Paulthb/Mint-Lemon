@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Transform highScoreCameraPos = null;
+    [SerializeField]
+    private Transform normalScoreCameraPos = null;
+
+    [SerializeField]
+    private GameObject winButton = null;
+
+    [SerializeField]
+    private GameObject gameOverButton = null;
 
     [NonSerialized]
     public bool isGameStarted = false;
@@ -56,6 +64,11 @@ public class GameManager : MonoBehaviour
 
         timerScore = ChronoTimer.Instance.GetTimer();
 
+        if(timerScore > highScoreData.GetHighScore())
+        {
+            StartCoroutine(SwitchToHighScorePlan());
+        }
+
         highScoreData.scoreList.Add(timerScore);
 
         StartCoroutine(SwitchToHighScorePlan());
@@ -78,5 +91,26 @@ public class GameManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
         cameraTransform.position = highScoreCameraPos.position;
+        winButton.SetActive(true);
+    }
+
+    public IEnumerator SwitchToNormalScorePlan()
+    {
+        yield return new WaitForSeconds(2f);
+
+        float elapsedTime = 0;
+        float waitTime = 2f;
+
+        Vector3 baseCamPos = cameraTransform.position;
+
+        while (elapsedTime < waitTime)
+        {
+            cameraTransform.position = Vector3.Lerp(baseCamPos, normalScoreCameraPos.position, (elapsedTime / waitTime));
+            elapsedTime += Time.deltaTime;
+
+            yield return new WaitForEndOfFrame();
+        }
+        cameraTransform.position = normalScoreCameraPos.position;
+        gameOverButton.SetActive(true);
     }
 }
