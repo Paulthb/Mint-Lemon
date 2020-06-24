@@ -57,78 +57,79 @@ public class EventManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         AcidDrop();
 
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
+        HoleDrop();
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 2);
 
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 2);
 
+        yield return new WaitForSeconds(5);
+        HoleDrop();
 
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(25);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        AcidDrop();
 
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 2);
 
+        yield return new WaitForSeconds(5);
+        AcidDrop();
 
-        yield return new WaitForSeconds(35);
+        yield return new WaitForSeconds(5);
+        HoleDrop();
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(40);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(45);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(50);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(55);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-        yield return new WaitForSeconds(60);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
 
-
-        yield return new WaitForSeconds(65);
-
-
-        yield return new WaitForSeconds(70);
-
-
-        yield return new WaitForSeconds(80);
-
-
-        yield return new WaitForSeconds(85);
-
-
-        yield return new WaitForSeconds(90);
-
-
-        yield return new WaitForSeconds(95);
-
-
-        yield return new WaitForSeconds(100);
-
-
-        yield return new WaitForSeconds(105);
-
-
-        yield return new WaitForSeconds(110);
-
-
-        yield return new WaitForSeconds(115);
-
-
-        yield return new WaitForSeconds(120);
+        yield return new WaitForSeconds(5);
+        LaunchRandomEvent(1, 3);
     }
 
 
-    public void LaunchRandomEvent(int maxEventId)
+    public void LaunchRandomEvent(int minEventId, int maxEventId)
     {
-        int randId = Random.Range(1, maxEventId);
+        int randId = Random.Range(minEventId, maxEventId);
 
-        switch(maxEventId)
+        switch(randId)
         {
             case 1:
                 AcidDrop();
