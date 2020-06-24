@@ -9,6 +9,21 @@ public class PlatFormScript : MonoBehaviour
 
     private bool isTouilletteRunning = false;
 
+    #region Singleton Pattern
+    private static PlatFormScript _instance;
+
+    public static PlatFormScript Instance { get { return _instance; } }
+    #endregion
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+
+        else
+            _instance = this;
+    }
+
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.S)) // some condition to rotate 180
@@ -27,6 +42,7 @@ public class PlatFormScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.9f);
         FXManager.Instance.LaunchTouillette();
+        SoundManager.Instance.PlayTouillette();
 
         //tourne vers la droite ou vers la gauche
         if (isRight)

@@ -8,6 +8,7 @@ public class PailleScript : MonoBehaviour
     private GameObject holePrefab = null;
 
     private bool holeDropped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class PailleScript : MonoBehaviour
         yield return new WaitForSeconds(1f);
         if (!holeDropped)
         {
-            Instantiate(holePrefab, transform.position, Quaternion.identity);
+            Instantiate(holePrefab, transform.position, Quaternion.identity, PlatFormScript.Instance.transform);
             holeDropped = true;
         }
         yield return new WaitForSeconds(1f);
