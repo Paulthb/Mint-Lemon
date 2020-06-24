@@ -13,6 +13,7 @@ public class TouilletteScript : MonoBehaviour
     public IEnumerator TouilletteLifeTime()
     {
         yield return new WaitForSeconds(3.15f);
+
         Destroy(this.gameObject);
     }
 }

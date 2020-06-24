@@ -9,6 +9,21 @@ public class PlatFormScript : MonoBehaviour
 
     private bool isTouilletteRunning = false;
 
+    #region Singleton Pattern
+    private static PlatFormScript _instance;
+
+    public static PlatFormScript Instance { get { return _instance; } }
+    #endregion
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(this.gameObject);
+
+        else
+            _instance = this;
+    }
+
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.S)) // some condition to rotate 180
@@ -26,9 +41,11 @@ public class PlatFormScript : MonoBehaviour
         isTouilletteRunning = true;
 
         yield return new WaitForSeconds(0.9f);
+        FXManager.Instance.LaunchTouillette();
+        SoundManager.Instance.PlayTouillette();
 
         //tourne vers la droite ou vers la gauche
-        if(isRight)
+        if (isRight)
             targetAngles = transform.eulerAngles + 360f * Vector3.forward; // what the new angles should be
         else
             targetAngles = transform.eulerAngles + 360f * Vector3.back; // what the new angles should be
@@ -51,5 +68,6 @@ public class PlatFormScript : MonoBehaviour
         }
 
         isTouilletteRunning = false;
+        FXManager.Instance.StopTouillette();
     }
 }

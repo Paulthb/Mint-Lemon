@@ -116,6 +116,10 @@ public class PlayeController : MonoBehaviour
             else
                 StartCoroutine(AcidEffect());
         }
+        if (collision.gameObject.tag == "Hole" && !isJumping)
+        {
+            PlayerDeath();
+        }
     }
 
     private IEnumerator AcidEffect()
@@ -160,6 +164,7 @@ public class PlayeController : MonoBehaviour
         mrMintAnimator.SetBool("IsDead", true);
         rb.velocity = Vector3.zero;
 
+        SoundManager.Instance.PlayDeath();
         GameManager.Instance.GameOver();
     }
 }
