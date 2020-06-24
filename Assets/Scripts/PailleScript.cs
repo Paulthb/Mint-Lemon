@@ -7,9 +7,6 @@ public class PailleScript : MonoBehaviour
     [SerializeField]
     private GameObject holePrefab = null;
 
-    [SerializeField]
-    private Animation pailleAnim = null;
-
     private bool holeDropped = false;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +23,6 @@ public class PailleScript : MonoBehaviour
             holeDropped = true;
         }
         yield return new WaitForSeconds(1f);
-        Debug.Log("DIE");
         Destroy(this.gameObject);
     }
 }

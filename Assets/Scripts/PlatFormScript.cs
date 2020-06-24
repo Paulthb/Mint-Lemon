@@ -25,6 +25,8 @@ public class PlatFormScript : MonoBehaviour
     {
         isTouilletteRunning = true;
 
+        yield return new WaitForSeconds(0.9f);
+
         //tourne vers la droite ou vers la gauche
         if(isRight)
             targetAngles = transform.eulerAngles + 360f * Vector3.forward; // what the new angles should be

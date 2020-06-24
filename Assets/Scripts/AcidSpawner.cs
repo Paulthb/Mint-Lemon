@@ -5,7 +5,7 @@ using UnityEngine;
 public class AcidSpawner : MonoBehaviour
 {
     [SerializeField]
-    private GameObject platform;
+    private GameObject platform = null;
 
     [SerializeField]
     private List<AcidDrop> AcidDropList = null;

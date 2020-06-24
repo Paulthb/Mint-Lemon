@@ -16,6 +16,11 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private GameObject paillePrefab = null;
 
+    [SerializeField]
+    private GameObject touillettePrefab = null;
+
+    [SerializeField]
+    private PlatFormScript platform = null;
 
     #region Singleton Pattern
     private static EventManager _instance;
@@ -42,7 +47,7 @@ public class EventManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            AcidDrop();
+            ActivateTouillette();
     }
 
     public void AcidDrop()
@@ -60,5 +65,11 @@ public class EventManager : MonoBehaviour
     {
         int randHolesPosId = Random.Range(0, holesPosList.Count - 1);
         Instantiate(paillePrefab, holesPosList[randHolesPosId].position, Quaternion.identity);
+    }
+
+    public void ActivateTouillette()
+    {
+        Instantiate(touillettePrefab);
+        StartCoroutine(platform.TouilletteActivate(false));
     }
 }
