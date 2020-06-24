@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8172959133500188802}
   - component: {fileID: 5920242385279201299}
   m_Layer: 0
-  m_Name: Paille 1
+  m_Name: PailleV2
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8172959134873418325}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.26, y: 15.67, z: 12.3984375}
+  m_LocalPosition: {x: 0, y: 0, z: 12.3984375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8172959133500188802}
@@ -137,9 +137,10 @@ Animation:
   m_GameObject: {fileID: 8172959134873418325}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: c9637b32cc4220b438208a2e3bdc0e67, type: 2}
+  m_Animation: {fileID: 7400000, guid: 366b0dbdfd89b1c41a17c19c345e66d2, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: c9637b32cc4220b438208a2e3bdc0e67, type: 2}
+  - {fileID: 7400000, guid: 366b0dbdfd89b1c41a17c19c345e66d2, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
