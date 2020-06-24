@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         startToMoveObject.SetActive(false);
         isGameStarted = true;
+        StartCoroutine(EventManager.Instance.EventTimer());
     }
 
     public void GameOver()

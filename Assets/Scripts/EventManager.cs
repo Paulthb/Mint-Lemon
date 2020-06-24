@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
@@ -40,14 +41,108 @@ public class EventManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //StartCoroutine(EventTimer());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            ActivateTouillette();
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    ActivateTouillette();
+    }
+
+
+    public IEnumerator EventTimer()
+    {
+        yield return new WaitForSeconds(5);
+        AcidDrop();
+
+        yield return new WaitForSeconds(10);
+
+
+        yield return new WaitForSeconds(15);
+
+
+        yield return new WaitForSeconds(20);
+
+
+        yield return new WaitForSeconds(25);
+
+
+        yield return new WaitForSeconds(30);
+
+
+        yield return new WaitForSeconds(35);
+
+
+        yield return new WaitForSeconds(40);
+
+
+        yield return new WaitForSeconds(45);
+
+
+        yield return new WaitForSeconds(50);
+
+
+        yield return new WaitForSeconds(55);
+
+
+        yield return new WaitForSeconds(60);
+
+
+        yield return new WaitForSeconds(65);
+
+
+        yield return new WaitForSeconds(70);
+
+
+        yield return new WaitForSeconds(80);
+
+
+        yield return new WaitForSeconds(85);
+
+
+        yield return new WaitForSeconds(90);
+
+
+        yield return new WaitForSeconds(95);
+
+
+        yield return new WaitForSeconds(100);
+
+
+        yield return new WaitForSeconds(105);
+
+
+        yield return new WaitForSeconds(110);
+
+
+        yield return new WaitForSeconds(115);
+
+
+        yield return new WaitForSeconds(120);
+    }
+
+
+    public void LaunchRandomEvent(int maxEventId)
+    {
+        int randId = Random.Range(1, maxEventId);
+
+        switch(maxEventId)
+        {
+            case 1:
+                AcidDrop();
+                break;
+            case 2:
+                ActivateTouillette();
+                break;
+            case 3:
+                HoleDrop();
+                break;
+            default:
+                AcidDrop();
+                break;
+        }
     }
 
     public void AcidDrop()

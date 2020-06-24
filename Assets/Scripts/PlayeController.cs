@@ -126,7 +126,7 @@ public class PlayeController : MonoBehaviour
         trailNormal.SetActive(false);
         trailHightSpeed.SetActive(true);
 
-        speed = speed + 2;
+        speed = speed + 4;
         float newSpeed = speed;
 
         while (accelElapseTime < waitTime)

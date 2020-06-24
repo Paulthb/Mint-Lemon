@@ -11,11 +11,11 @@ public class PlatFormScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S)) // some condition to rotate 180
-            StartCoroutine(TouilletteActivate(true));
+        //if (Input.GetKeyDown(KeyCode.S)) // some condition to rotate 180
+        //    StartCoroutine(TouilletteActivate(true));
 
-        if (Input.GetKeyDown(KeyCode.D)) // some condition to rotate 180
-            StartCoroutine(TouilletteActivate(false));
+        //if (Input.GetKeyDown(KeyCode.D)) // some condition to rotate 180
+        //    StartCoroutine(TouilletteActivate(false));
 
         if (isTouilletteRunning)
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime); // lerp to new angles
