@@ -47,8 +47,8 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //    ActivateTouillette();
+        if (GameManager.Instance.isGameStarted == false)
+            StopCoroutine(EventTimer());
     }
 
 
