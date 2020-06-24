@@ -10,6 +10,12 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     private List<Transform> acidDropPosList = null;
 
+    [SerializeField]
+    private List<Transform> holesPosList = null;
+
+    [SerializeField]
+    private GameObject paillePrefab = null;
+
 
     #region Singleton Pattern
     private static EventManager _instance;
@@ -48,5 +54,11 @@ public class EventManager : MonoBehaviour
         //Debug.Log(randAcidPosId);
 
         spawnerList[randSpawnerId].SpawnAcid(acidDropPosList[randAcidPosId]);
+    }
+
+    public void HoleDrop()
+    {
+        int randHolesPosId = Random.Range(0, holesPosList.Count - 1);
+        Instantiate(paillePrefab, holesPosList[randHolesPosId].position, Quaternion.identity);
     }
 }
