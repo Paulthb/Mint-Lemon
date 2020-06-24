@@ -22,6 +22,7 @@ public class PailleScript : MonoBehaviour
         {
             Instantiate(holePrefab, transform.position, Quaternion.identity, PlatFormScript.Instance.transform);
             holeDropped = true;
+            SoundManager.Instance.PlayPaille();
         }
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);

@@ -79,7 +79,10 @@ public class PlayeController : MonoBehaviour
         }
 
         if (Input.GetButton("Jump") && !isJumping)
+        {
             StartCoroutine(PlayerJump());
+            SoundManager.Instance.PlayJump();
+        }
     }
 
     //private void FixedUpdate()

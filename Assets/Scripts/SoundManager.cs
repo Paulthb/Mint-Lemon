@@ -26,6 +26,10 @@ public class SoundManager : MonoBehaviour
     private AudioClip touilletteSfx = null;
     [SerializeField]
     private AudioClip DeathSfx = null;
+    [SerializeField]
+    private AudioClip JumpSfx = null;
+    [SerializeField]
+    private AudioClip pailleSfx = null;
 
     public void PlayDeath()
     {
@@ -36,6 +40,18 @@ public class SoundManager : MonoBehaviour
     public void PlayTouillette()
     {
         mainSfxSource.clip = touilletteSfx;
+        mainSfxSource.Play();
+    }
+
+    public void PlayJump()
+    {
+        mainSfxSource.clip = JumpSfx;
+        mainSfxSource.Play();
+    }
+
+    public void PlayPaille()
+    {
+        mainSfxSource.clip = pailleSfx;
         mainSfxSource.Play();
     }
 }
