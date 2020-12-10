@@ -1986,6 +1986,8 @@ MonoBehaviour:
   mainSfxSource: {fileID: 1678442120}
   touilletteSfx: {fileID: 8300000, guid: cbfbc2e467b0d3746ab38a6a7c55cd3e, type: 3}
   DeathSfx: {fileID: 8300000, guid: c4d9377861ce057438a4376606088dfc, type: 3}
+  JumpSfx: {fileID: 8300000, guid: 8ae8ffbc7746a36499e8a46d9ca57519, type: 3}
+  pailleSfx: {fileID: 8300000, guid: be52d83683efde94da9f139fdfd7c30b, type: 3}
 --- !u!4 &716970080
 Transform:
   m_ObjectHideFlags: 0
