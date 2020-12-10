@@ -169,5 +169,12 @@ public class PlayeController : MonoBehaviour
 
         SoundManager.Instance.PlayDeath();
         GameManager.Instance.GameOver();
+        StartCoroutine(delay());
+    }
+
+    public IEnumerator delay()
+    {
+        yield return new WaitForSeconds(2f);
+        Destroy(this.gameObject);
     }
 }
